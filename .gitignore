@@ -1,0 +1,14 @@
+# Python / Jupyter
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Veri setleri (büyük dosyaları repoya yüklemeyin, notebook içinde linkini verin)
+*.csv
+*.zip
+data/
+
+# Sistem
+.DS_Store
+Thumbs.db
+~$*.xlsx
