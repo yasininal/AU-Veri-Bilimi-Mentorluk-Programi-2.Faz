@@ -21,8 +21,8 @@ git config --global user.email "eposta@ornek.com"
 2. Kendi kopyanızda yeşil **"Code"** butonundan linki kopyalayın:
 
 ```bash
-git clone https://github.com/kullanici-adiniz/AU-Veri-Bilimi-5Hafta-Mentorluk.git
-cd AU-Veri-Bilimi-5Hafta-Mentorluk
+git clone https://github.com/kullanici-adiniz/AU-Veri-Bilimi-Mentorluk-Programi-2.Faz.git
+cd AU-Veri-Bilimi-Mentorluk-Programi-2.Faz
 ```
 
 ### 3. Haftalık Teslim
