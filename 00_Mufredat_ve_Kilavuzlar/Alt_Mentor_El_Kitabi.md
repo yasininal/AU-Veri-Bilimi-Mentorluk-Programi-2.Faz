@@ -5,6 +5,12 @@ Tebrikler! Geçen dönem gösterdiğin performans sayesinde bu dönem **alt ment
 > [!NOTE]
 > Bir konuyu gerçekten öğrenmenin en iyi yolu onu başkasına anlatmaktır. Mentilerinin kodunu incelerken geçen dönem öğrendiklerini çok daha derinden kavrayacaksın.
 
+Program iki modülden oluşur:
+- **Modül 1 — Python ve Veri Analizi** (3 hafta)
+- **Modül 2 — Makine Öğrenmesi Temelleri** (3 hafta)
+
+Modül 1'i bitiren menti Modül 2'ye geçmeye hak kazanır. Takımını bu geçişe hazırlamak senin en önemli görevin.
+
 ---
 
 ## 1. Sorumlulukların
@@ -22,7 +28,20 @@ Tebrikler! Geçen dönem gösterdiğin performans sayesinde bu dönem **alt ment
 
 ---
 
-## 2. Code Review (PR İnceleme) Rehberi
+## 2. Modül Geçişi ve Mezuniyet
+
+| | Şart |
+| :--- | :--- |
+| **Modül 1 → Modül 2** | 3 haftanın en az 2'sini tamamlamak **ve** 3. haftadaki mini projeyi teslim etmek |
+| **Mezuniyet** | Modül 2'de 3 haftanın en az 2'sini tamamlamak **ve** bitirme projesini teslim etmek |
+
+- Takip tablosu bu şartları **otomatik hesaplar**; sen sadece haftalık durumları doğru girmelisin.
+- Modül 1'in sonunda eksiği olan mentiler için **ara hafta** var. Bu haftada onlarla birlikte bir telafi planı yap.
+- Geçiş hakkı kazanamayan menti programdan atılmaz; bir sonraki dönemde Modül 1'i tamamlayıp devam edebilir.
+
+---
+
+## 3. Code Review (PR İnceleme) Rehberi
 
 Her PR'da şu 4 soruyu sor:
 
@@ -45,29 +64,31 @@ Her PR'da şu 4 soruyu sor:
 
 ---
 
-## 3. Takım Toplantısı Akışı (20-30 dk)
+## 4. Takım Toplantısı Akışı (20-30 dk)
 
 1. **Tur (5 dk):** Herkes bu hafta ne yaptığını ve nerede zorlandığını kısaca anlatır.
 2. **Kod incelemesi (10-15 dk):** Bir mentinin ekranını paylaşıp ödevini birlikte gözden geçirin. Her hafta farklı bir menti.
-3. **Kontrol sorusu (5 dk):** Müfredat kılavuzundaki haftanın kontrol sorusunu takımla tartışın.
+3. **Kontrol sorusu (5 dk):** Modül kılavuzundaki haftanın kontrol sorusunu takımla tartışın.
 4. **Gelecek hafta (2 dk):** Yeni haftanın konusunu ve teslim tarihini hatırlat.
 
 ---
 
-## 4. Takip Tablosu Kullanımı
+## 5. Takip Tablosu Kullanımı
 
-Her hafta mentilerin için şu sütunları güncelle:
+Tabloda iki ayrı takip sayfası var: **Modül 1 Takip** ve **Modül 2 Takip**. Her hafta mentilerin için şu sütunları güncelle:
 
 - **Durum:** 🟢 Tamamlandı / 🟡 Devam Ediyor / 🔴 Başlamadı
 - **PR Onaylandı:** Evet / Hayır
 - **Toplantıya Katıldı:** Evet / Hayır
 - **Mentor Notu:** Kısa bir gözlem (örn. "Pandas'ta zorlanıyor, ek kaynak gönderdim")
 
+Modül 2 sayfasında Modül 2'ye geçiş hakkı olmayan mentilerin satırları **gri** görünür; bu satırları doldurmana gerek yok.
+
 ---
 
-## 5. Erken Uyarı ve Kopma Riskine Karşı
+## 6. Erken Uyarı ve Kopma Riskine Karşı
 
-5 haftalık program kısa olduğu için **bir haftayı kaçıran mentiyi hemen yakalamak** kritik.
+Modüller kısa olduğu için **bir haftayı kaçıran mentiyi hemen yakalamak** kritik.
 
 - Menti **Cumartesi** teslim etmediyse Pazar günü kibar ve kısa bir mesaj at.
 - **2 hafta üst üste** teslim yoksa durumu **baş mentora** bildir.
@@ -75,7 +96,7 @@ Her hafta mentilerin için şu sütunları güncelle:
 
 ---
 
-## 6. Ne Zaman Baş Mentora Danışmalısın?
+## 7. Ne Zaman Baş Mentora Danışmalısın?
 
 - Cevabını bilmediğin teknik bir soru geldiğinde (bilmemek normal! "Araştırıp döneceğim" demek yeterli.)
 - Bir menti iletişimi tamamen kestiğinde

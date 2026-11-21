@@ -30,21 +30,23 @@ cd AU-Veri-Bilimi-Mentorluk-Programi-2.Faz
 **Adım 1 — Dosyanızı doğru klasöre koyun:**
 
 ```
-01_Takimlar/Takim_XX_MentorAdi/AdinizSoyadiniz/hafta1/odev1.ipynb
+01_Takimlar/Takim_XX_MentorAdi/AdinizSoyadiniz/modul1/hafta1/odev1.ipynb
 ```
+
+- Modül 1 ödevleri `modul1/` altına, Modül 2 ödevleri `modul2/` altına yüklenir.
 
 **Adım 2 — Kaydedin ve gönderin:**
 
 ```bash
 git add .
-git commit -m "Hafta 1: Ad Soyad"
+git commit -m "Modul 1 - Hafta 1: Ad Soyad"
 git push origin main
 ```
 
 **Adım 3 — Pull Request açın:**
 1. GitHub'daki kendi fork sayfanıza gidin.
 2. **"Contribute" → "Open Pull Request"** butonuna basın.
-3. Başlık: `[Takim_XX] Hafta 1 - Ad Soyad`
+3. Başlık: `[Takim_XX] M1-Hafta 1 - Ad Soyad` (Modül 2 için `M2-Hafta 1`)
 4. Açıklamaya kısaca ne yaptığınızı ve zorlandığınız yeri yazın.
 
 ### 4. Mentorunuz Değişiklik İsterse
