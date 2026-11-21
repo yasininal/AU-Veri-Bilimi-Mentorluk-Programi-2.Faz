@@ -18,7 +18,7 @@ Baş Mentor (Koordinatör)
           └── Her alt mentora 2-3 menti
 ```
 
-- **Baş Mentor:** Programı ve müfredatı yönetir, haftalık olarak alt mentorlarla senkronizasyon toplantısı yapar, PR'ları son kez kontrol edip birleştirir.
+- **Baş Mentor:** Programı ve müfredatı yönetir, modül başı toplantılarını yapar, PR'ları son kez kontrol edip birleştirir.
 - **Alt Mentor:** Kendi 2-3 mentisiyle iletişimde kalır, PR'larını inceler (code review) ve takip tablosunu günceller.
 - **Menti:** Haftalık videoları izler, ödevini yapar ve PR açar.
 
@@ -36,8 +36,28 @@ Modül 1 (3 hafta)  →  Ara Hafta (telafi)  →  Modül 2 (3 hafta)  →  Demo 
 
 | | Şart |
 | :--- | :--- |
-| **Modül 1 → Modül 2 geçişi** | 3 haftanın en az 2'sini tamamlamak **ve** 3. haftadaki mini projeyi (zorunlu) teslim etmek |
-| **Program mezuniyeti** | Modül 2'de 3 haftanın en az 2'sini tamamlamak **ve** bitirme projesini (zorunlu) teslim etmek |
+| **Modül 1 → Modül 2 geçişi** | Modül 1'in **3 haftasının tamamını** tamamlamak (3. haftadaki mini proje dahil) |
+| **Program mezuniyeti** | Modül 2'nin **3 haftasının tamamını** tamamlamak (3. haftadaki bitirme projesi dahil) |
+
+## Toplantılar (Sadece Modül Başlarında)
+
+Toplantılar her hafta tekrarlanmaz; **her modülün başında** bir kez yapılır:
+
+| Toplantı | Katılımcılar | Amaç |
+| :--- | :--- | :--- |
+| **Mentor Toplantısı** | Baş Mentor + Alt Mentorlar | Modülün içeriği, görevler ve dikkat edilecek noktalar |
+| **Genel Açılış Toplantısı** | Baş Mentor + Tüm Mentiler | Modülün tanıtımı, beklentiler ve takvim |
+| **Takım Toplantısı** | Alt Mentor + Kendi Mentileri | Takımla tanışma, iletişim düzeni ve soru-cevap |
+
+Bunların dışında iletişim takım gruplarında (WhatsApp/Discord) ve PR yorumları üzerinden yürür.
+
+## Haftalık Ritim
+
+| Gün | Ne Oluyor? |
+| :--- | :--- |
+| Pazartesi – Pazar | Mentiler videoları izler ve ödevini yapar, takıldığında önce kendi alt mentoruna sorar |
+| **Pazar 23:59** | Haftalık ödevin son teslim tarihi (PR) |
+| Pazartesi – Salı | Alt mentor teslim edilen PR'ları inceler ve takip tablosunu günceller |
 
 ## Proje Yapısı
 
@@ -48,12 +68,3 @@ Modül 1 (3 hafta)  →  Ara Hafta (telafi)  →  Modül 2 (3 hafta)  →  Demo 
   - `Github_Takim_Kullanimi.md`: Fork, PR açma ve PR inceleme adımları.
 - `01_Takimlar/`: Her takımın klasörü. Yapı: `Takim_XX_MentorAdi/MentiAdi/modulX/haftaX/`
 - `Takip_Sistemi/`: Takip Excel'ini üreten script ve Excel dosyası.
-
-## Haftalık Ritim
-
-| Gün | Ne Oluyor? |
-| :--- | :--- |
-| Pazartesi | Baş Mentor + Alt Mentorlar senkronizasyon toplantısı (20 dk) |
-| Pazartesi – Cumartesi | Mentiler videoları izler ve ödevini yapar, takıldığında önce kendi alt mentoruna sorar |
-| **Cumartesi 23:59** | Haftalık ödevin son PR teslim saati |
-| Pazar | Alt mentor PR'ları inceler, takımıyla 20-30 dk toplantı yapar, tabloyu günceller |

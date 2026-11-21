@@ -17,23 +17,41 @@ Modül 1'i bitiren menti Modül 2'ye geçmeye hak kazanır. Takımını bu geçi
 
 | Ne? | Ne Zaman? | Süre |
 | :--- | :--- | :--- |
-| Baş mentorla senkronizasyon toplantısına katılmak | Pazartesi | ~20 dk |
+| Baş mentorla **mentor toplantısına** katılmak | Her modülün başında | ~30 dk |
+| Kendi takımınla **takım toplantısı** yapmak | Her modülün başında | ~30 dk |
 | Takım grubunda (WhatsApp/Discord) mentilerin sorularını yanıtlamak | Hafta boyunca | — |
 | Hafta ortasında kısa bir kontrol mesajı atmak ("Videolar nasıl gidiyor?") | Çarşamba | 2 dk |
-| Mentilerin PR'larını incelemek ve yorum yazmak | Pazar | ~15 dk / menti |
-| Takımla haftalık değerlendirme toplantısı yapmak | Pazar | 20-30 dk |
-| Takip tablosunda kendi takımının satırlarını güncellemek | Pazar | 5 dk |
+| Mentilerin PR'larını incelemek | Pazartesi – Salı (Pazar teslimden sonra) | ~15 dk / menti |
+| Takip tablosunda kendi takımının satırlarını güncellemek | PR incelemesinden sonra | 5 dk |
 
-**Toplam haftalık yükün:** yaklaşık 1,5-2 saat.
+**Toplam haftalık yükün:** yaklaşık 1 saat (modül başı haftalarında toplantılarla birlikte biraz daha fazla).
 
 ---
 
-## 2. Modül Geçişi ve Mezuniyet
+## 2. Toplantılar (Sadece Modül Başlarında)
+
+Toplantılar her hafta tekrarlanmaz. Her modülün başında şu üç toplantı yapılır:
+
+| Toplantı | Katılımcılar | Senin Rolün |
+| :--- | :--- | :--- |
+| **Mentor Toplantısı** | Baş Mentor + Alt Mentorlar | Modülün içeriğini ve görevleri öğrenmek, sorularını sormak |
+| **Genel Açılış Toplantısı** | Baş Mentor + Tüm Mentiler | Katılman önerilir; mentilerin seni tanıması için iyi bir fırsat |
+| **Takım Toplantısı** | Sen + Kendi Mentilerin | Toplantıyı sen yönetirsin (aşağıdaki akış) |
+
+### Takım Toplantısı Akışı (~30 dk)
+1. **Tanışma (5-10 dk):** Herkes kendini ve programdan beklentisini kısaca anlatır.
+2. **Modülün tanıtımı (10 dk):** 3 haftanın konuları, görevler ve **Pazar 23:59** teslim tarihi.
+3. **İletişim düzeni (5 dk):** Soruların nereye ve nasıl sorulacağı, ne kadar sürede dönüş yapacağın.
+4. **Soru-cevap (5-10 dk):** Kurulum veya GitHub ile ilgili takılan yerler.
+
+---
+
+## 3. Modül Geçişi ve Mezuniyet
 
 | | Şart |
 | :--- | :--- |
-| **Modül 1 → Modül 2** | 3 haftanın en az 2'sini tamamlamak **ve** 3. haftadaki mini projeyi teslim etmek |
-| **Mezuniyet** | Modül 2'de 3 haftanın en az 2'sini tamamlamak **ve** bitirme projesini teslim etmek |
+| **Modül 1 → Modül 2** | Modül 1'in **3 haftasının tamamını** tamamlamak (3. haftadaki mini proje dahil) |
+| **Mezuniyet** | Modül 2'nin **3 haftasının tamamını** tamamlamak (3. haftadaki bitirme projesi dahil) |
 
 - Takip tablosu bu şartları **otomatik hesaplar**; sen sadece haftalık durumları doğru girmelisin.
 - Modül 1'in sonunda eksiği olan mentiler için **ara hafta** var. Bu haftada onlarla birlikte bir telafi planı yap.
@@ -41,7 +59,7 @@ Modül 1'i bitiren menti Modül 2'ye geçmeye hak kazanır. Takımını bu geçi
 
 ---
 
-## 3. Code Review (PR İnceleme) Rehberi
+## 4. Code Review (PR İnceleme) Rehberi
 
 Her PR'da şu 4 soruyu sor:
 
@@ -55,21 +73,11 @@ Her PR'da şu 4 soruyu sor:
 - Çözümü doğrudan yazma; **ipucu ver veya soru sor.**
   - ❌ "Burada `fillna(df.mean())` kullanmalısın."
   - ✅ "Bu sütundaki eksik değerleri silmek yerine doldurmayı düşündün mü? Hangi değerle doldurmak mantıklı olur?"
-- Her PR'a **en az bir yorum** yaz; menti emeğinin görüldüğünü hissetmeli.
 
 ### PR Onay Kriteri
 - Görev tamamlanmış ve notebook çalışıyorsa → **Approve** et ve tabloda "PR Onaylandı: Evet" yap.
 - Eksik varsa → **Request changes** ile eksikleri belirt, menti düzeltince tekrar bak.
 - Baş mentor onaylanmış PR'ları ana repoya birleştirir (merge).
-
----
-
-## 4. Takım Toplantısı Akışı (20-30 dk)
-
-1. **Tur (5 dk):** Herkes bu hafta ne yaptığını ve nerede zorlandığını kısaca anlatır.
-2. **Kod incelemesi (10-15 dk):** Bir mentinin ekranını paylaşıp ödevini birlikte gözden geçirin. Her hafta farklı bir menti.
-3. **Kontrol sorusu (5 dk):** Modül kılavuzundaki haftanın kontrol sorusunu takımla tartışın.
-4. **Gelecek hafta (2 dk):** Yeni haftanın konusunu ve teslim tarihini hatırlat.
 
 ---
 
@@ -79,7 +87,6 @@ Tabloda iki ayrı takip sayfası var: **Modül 1 Takip** ve **Modül 2 Takip**. 
 
 - **Durum:** 🟢 Tamamlandı / 🟡 Devam Ediyor / 🔴 Başlamadı
 - **PR Onaylandı:** Evet / Hayır
-- **Toplantıya Katıldı:** Evet / Hayır
 - **Mentor Notu:** Kısa bir gözlem (örn. "Pandas'ta zorlanıyor, ek kaynak gönderdim")
 
 Modül 2 sayfasında Modül 2'ye geçiş hakkı olmayan mentilerin satırları **gri** görünür; bu satırları doldurmana gerek yok.
@@ -88,9 +95,9 @@ Modül 2 sayfasında Modül 2'ye geçiş hakkı olmayan mentilerin satırları *
 
 ## 6. Erken Uyarı ve Kopma Riskine Karşı
 
-Modüller kısa olduğu için **bir haftayı kaçıran mentiyi hemen yakalamak** kritik.
+Modüller kısa ve geçiş için **3 haftanın tamamı** gerektiği için bir haftayı kaçıran mentiyi hemen yakalamak kritik.
 
-- Menti **Cumartesi** teslim etmediyse Pazar günü kibar ve kısa bir mesaj at.
+- Menti **Pazar 23:59**'a kadar teslim etmediyse Pazartesi günü kibar ve kısa bir mesaj at.
 - **2 hafta üst üste** teslim yoksa durumu **baş mentora** bildir.
 - Zorlanan mentiye ödevi yarıya düşürmeyi önerebilirsin; tamamen kopmasından iyidir.
 

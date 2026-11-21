@@ -4,16 +4,17 @@ Mentorluk programına hoş geldiniz! Bu dönem her biriniz **2-3 kişilik bir ta
 
 - **Kaynak:** BTK Akademi — Atıl Samancıoğlu, *"Veri Bilimi için Python ve Tensorflow"* (ücretsiz)
 - **Haftalık yük:** yaklaşık 3-5 saat
-- **Teslim:** Her hafta **Cumartesi 23:59**'a kadar GitHub'a Pull Request (PR)
+- **Teslim:** Her hafta **Pazar 23:59**'a kadar GitHub'a Pull Request (PR)
 
 > [!IMPORTANT]
-> **Modül 2'ye (Makine Öğrenmesi) geçiş şartı:** 3 haftanın en az 2'sini tamamlamak **ve** 3. haftadaki mini projeyi teslim etmek. Eksiği kalanlar modül sonrasındaki **ara haftada** telafi edebilir.
+> **Modül 2'ye (Makine Öğrenmesi) geçiş şartı:** Modül 1'in **3 haftasının tamamını** tamamlamak (3. haftadaki mini proje dahil). Eksiği kalanlar modül sonrasındaki **ara haftada** telafi edebilir.
 
 ## Program İşleyişi
-1. Her hafta belirlenen videoları izleyip kendi bilgisayarınızda (veya Google Colab'da) uygulayın.
-2. Ödevinizi Cumartesi 23:59'a kadar PR olarak gönderin.
-3. Alt mentorunuz PR'ınızı inceler ve Pazar günü takımınızla kısa bir değerlendirme toplantısı yapar.
-4. Takıldığınız yerde **önce alt mentorunuza** sorun.
+1. **Modül başında** baş mentorla genel açılış toplantısı, ardından alt mentorunuzla takım toplantısı yapılır. Toplantılar her hafta tekrarlanmaz.
+2. Her hafta belirlenen videoları izleyip kendi bilgisayarınızda (veya Google Colab'da) uygulayın.
+3. Ödevinizi **Pazar 23:59**'a kadar PR olarak gönderin.
+4. Alt mentorunuz PR'ınızı inceleyip geri bildirim verir.
+5. Takıldığınız yerde **önce alt mentorunuza** takım grubunuzdan sorun.
 
 ---
 

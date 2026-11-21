@@ -24,9 +24,9 @@ TAKIMLAR = {
     "Mentor_5": ["Menti_5A", "Menti_5B"],
 }
 
-HAFTA_SAYISI = 3        # Her modüldeki hafta sayısı
-GECIS_MIN_HAFTA = 2     # Modül 1 -> Modül 2 geçişi için min. tamamlanan hafta (son hafta projesi ayrıca zorunlu)
-MEZUNIYET_MIN_HAFTA = 2 # Modül 2 mezuniyeti için min. tamamlanan hafta (bitirme projesi ayrıca zorunlu)
+HAFTA_SAYISI = 3         # Her modüldeki hafta sayısı
+GECIS_MIN_HAFTA = 3      # Modül 1 -> Modül 2 geçişi: 3 haftanın tamamı (mini proje dahil)
+MEZUNIYET_MIN_HAFTA = 3  # Mezuniyet: Modül 2'nin 3 haftasının tamamı (bitirme projesi dahil)
 DOSYA_ADI = "Mentorluk_Takip_2_Modul.xlsx"
 KLASORLERI_OLUSTUR = True
 
@@ -61,7 +61,7 @@ program = pd.DataFrame([
      "Bölüm 16, 17: Karar Ağacı ve Random Forest ile Sınıflandırma",
      "ZORUNLU bitirme projesi: LogReg vs Random Forest + Demo günü"],
 ], columns=["Modül", "Hafta", "Kaynak", "Başlık", "İzlenecek Konular", "Görev / Checkpoint"])
-program["Teslim"] = ["Cumartesi 23:59"] * 3 + ["Ara hafta sonu"] + ["Cumartesi 23:59"] * 3
+program["Teslim"] = ["Pazar 23:59"] * 3 + ["Ara hafta sonu"] + ["Pazar 23:59"] * 3
 
 # =====================================================================
 # 3. EXCEL BİÇİMLERİ
@@ -113,15 +113,15 @@ ws.freeze_panes(1, 0)
 # =====================================================================
 # 5. SAYFALAR: Modül 1 Takip / Modül 2 Takip
 #    Sütunlar: A Takım | B Alt Mentor | C Menti | D Hafta | E Durum
-#              F PR Onaylandı | G Toplantıya Katıldı | H Mentor Notu | (I Modül 2 Hakkı)
+#              F PR Onaylandı | G Mentor Notu | (H Modül 2 Hakkı)
 # =====================================================================
 satirlar = []
 for t_no, (mentor, mentiler) in enumerate(TAKIMLAR.items(), start=1):
     for menti in mentiler:
         for h in range(1, HAFTA_SAYISI + 1):
             satirlar.append([f"Takim_{t_no:02d}", mentor, menti, f"Hafta {h}",
-                             "🔴 Başlamadı", "Hayır", "Hayır", ""])
-kolonlar = ["Takım", "Alt Mentor", "Menti", "Hafta", "Durum", "PR Onaylandı", "Toplantıya Katıldı", "Mentor Notu"]
+                             "🔴 Başlamadı", "Hayır", ""])
+kolonlar = ["Takım", "Alt Mentor", "Menti", "Hafta", "Durum", "PR Onaylandı", "Mentor Notu"]
 N = len(satirlar)
 
 
@@ -143,28 +143,27 @@ for sayfa, modul2 in (("Modül 1 Takip", False), ("Modül 2 Takip", True)):
     df = pd.DataFrame(satirlar, columns=kolonlar)
     df.to_excel(writer, sheet_name=sayfa, index=False)
     ws = writer.sheets[sayfa]
-    genislikler = [11, 16, 18, 10, 18, 14, 18, 40]
+    genislikler = [11, 16, 18, 10, 18, 14, 45]
     for i, w in enumerate(genislikler):
-        ws.set_column(i, i, w, cell if i == 7 else center)
+        ws.set_column(i, i, w, cell if i == 6 else center)
     for c, v in enumerate(kolonlar):
         ws.write(0, c, v, header)
-    son_kolon = 7
+    son_kolon = 6
 
     if modul2:
-        ws.write(0, 8, "Modül 2 Hakkı", header)
-        ws.set_column(8, 8, 15, center)
+        ws.write(0, 7, "Modül 2 Hakkı", header)
+        ws.set_column(7, 7, 15, center)
         for r in range(1, N + 1):
-            ws.write_formula(r, 8, "=" + gecis_formulu(f"$C{r + 1}"), center)
+            ws.write_formula(r, 7, "=" + gecis_formulu(f"$C{r + 1}"), center)
         # Geçiş hakkı olmayan mentilerin satırları gri (ilk eklenen kural öncelikli)
-        ws.conditional_format(1, 0, N, 7, {"type": "formula", "criteria": '=$I2="🔒 Yok"', "format": grey})
-        renklendir(ws, 1, 8, N, 8, [("✅ Var", green), ("🔒 Yok", grey)])
-        son_kolon = 8
+        ws.conditional_format(1, 0, N, 6, {"type": "formula", "criteria": '=$H2="🔒 Yok"', "format": grey})
+        renklendir(ws, 1, 7, N, 7, [("✅ Var", green), ("🔒 Yok", grey)])
+        son_kolon = 7
 
     ws.data_validation(1, 4, N, 4, {"validate": "list", "source": [TAMAM, "🟡 Devam Ediyor", "🔴 Başlamadı"]})
     renklendir(ws, 1, 4, N, 4, [(TAMAM, green), ("🟡 Devam Ediyor", yellow), ("🔴 Başlamadı", red)])
-    for col in (5, 6):
-        ws.data_validation(1, col, N, col, {"validate": "list", "source": ["Evet", "Hayır"]})
-        renklendir(ws, 1, col, N, col, [("Evet", green), ("Hayır", red)])
+    ws.data_validation(1, 5, N, 5, {"validate": "list", "source": ["Evet", "Hayır"]})
+    renklendir(ws, 1, 5, N, 5, [("Evet", green), ("Hayır", red)])
     ws.autofilter(0, 0, N, son_kolon)  # Mentorlar kendi takımını filtreleyebilir
     ws.freeze_panes(1, 4)
 

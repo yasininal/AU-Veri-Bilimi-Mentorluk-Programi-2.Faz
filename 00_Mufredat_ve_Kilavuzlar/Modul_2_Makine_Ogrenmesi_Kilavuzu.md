@@ -4,13 +4,14 @@ Tebrikler! Modül 1'i tamamlayarak Makine Öğrenmesi modülüne geçmeye hak ka
 
 - **Kaynak:** BTK Akademi — Şadi Evren Şeker, *"Python ile Makine Öğrenmesi"* (ücretsiz)
 - **Haftalık yük:** yaklaşık 3-5 saat
-- **Teslim:** Her hafta **Cumartesi 23:59**'a kadar GitHub'a Pull Request (PR)
+- **Teslim:** Her hafta **Pazar 23:59**'a kadar GitHub'a Pull Request (PR)
+- **Toplantılar:** Modül başında baş mentorla genel açılış toplantısı ve alt mentorunuzla takım toplantısı (her hafta tekrarlanmaz)
 
 > [!NOTE]
 > Bu modülde bilerek **sadece en temel ve en çok kullanılan** konulara odaklanıyoruz: regresyon, lojistik regresyon, karar ağacı / random forest ve model değerlendirme. Amaç çok algoritma görmek değil, **bir modeli baştan sona kurup yorumlayabilmek.**
 
 > [!IMPORTANT]
-> **Mezuniyet şartı:** 3 haftanın en az 2'sini tamamlamak **ve** 3. haftadaki bitirme projesini teslim etmek.
+> **Mezuniyet şartı:** Modül 2'nin **3 haftasının tamamını** tamamlamak (3. haftadaki bitirme projesi dahil).
 
 ---
 
