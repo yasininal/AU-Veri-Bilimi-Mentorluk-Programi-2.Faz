@@ -1,6 +1,6 @@
 # Modül 1 — Python ve Veri Analizi (3 Hafta)
 
-Mentorluk programına hoş geldiniz! Bu dönem her biriniz **2-3 kişilik bir takımda**, size özel bir **alt mentorla** birlikte ilerleyeceksiniz.
+Mentorluk programına hoş geldiniz! Bu dönem her biriniz **4 kişilik bir takımda**, size özel bir **alt mentorla** birlikte ilerleyeceksiniz.
 
 - **Kaynak:** BTK Akademi — Atıl Samancıoğlu, *"Veri Bilimi için Python ve Tensorflow"* (ücretsiz)
 - **Haftalık yük:** yaklaşık 3-5 saat

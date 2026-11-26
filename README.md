@@ -15,14 +15,23 @@ Bu repo, Veri Bilimi topluluğumuzun **iki modüllü** mentorluk programının t
 ```
 Baş Mentor (Koordinatör)
    └── Alt Mentorlar (geçen dönemin başarılı katılımcıları)
-          └── Her alt mentora 2-3 menti
+          └── Her alt mentora 4 menti
 ```
 
 - **Baş Mentor:** Programı ve müfredatı yönetir, modül başı toplantılarını yapar, PR'ları son kez kontrol edip birleştirir.
-- **Alt Mentor:** Kendi 2-3 mentisiyle iletişimde kalır, PR'larını inceler (code review) ve takip tablosunu günceller.
+- **Alt Mentor:** Kendi 4 mentisiyle iletişimde kalır, PR'larını inceler (code review) ve takip tablosunu günceller.
 - **Menti:** Haftalık videoları izler, ödevini yapar ve PR açar.
 
 Programı tamamlayan mentiler, **bir sonraki dönem alt mentor** olma ve **proje ekibinde** yer alma hakkı kazanır. Sistem her dönem kendini büyütür.
+
+## Takımlar ve Mentor Dağılımı
+
+| Takım | Alt Mentor | Mentiler |
+| :--- | :--- | :--- |
+| **Takım 1** | Demirhan | Batuhan Dursun, Yiğit Alperen Bekiroğlu, Recep Pişgin, Duru Kaygusuz |
+| **Takım 2** | Fatma Nur | Hatice Yıldız, Irmak Turhan, Narin Ece Barut, Nevin Selin Alpay |
+| **Takım 3** | Bilgehan | Serra Seçkin, Ebru Alptekin, Azra Abak, Kıvanç Çelik |
+| **Takım 4** | Ali Kemal | Hamza Demir, Nazif Kılıç, Mustafa Zahid Beşibirlik, Asım Efe Dağ |
 
 ## Program Akışı
 

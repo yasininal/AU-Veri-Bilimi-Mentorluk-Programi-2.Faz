@@ -14,14 +14,33 @@ import pandas as pd
 
 # =====================================================================
 # 1. TAKIM AYARLARI  (Sadece burayı düzenlemen yeterli)
-#    Anahtar: Alt mentorun adı  |  Değer: O mentora atanan 2-3 menti
+#    Anahtar: Alt mentorun adı  |  Değer: O mentora atanan mentiler
 # =====================================================================
 TAKIMLAR = {
-    "Mentor_1": ["Menti_1A", "Menti_1B", "Menti_1C"],
-    "Mentor_2": ["Menti_2A", "Menti_2B", "Menti_2C"],
-    "Mentor_3": ["Menti_3A", "Menti_3B"],
-    "Mentor_4": ["Menti_4A", "Menti_4B", "Menti_4C"],
-    "Mentor_5": ["Menti_5A", "Menti_5B"],
+    "Demirhan": [
+        "Batuhan Dursun",
+        "Yiğit Alperen Bekiroğlu",
+        "Recep Pişgin",
+        "Duru Kaygusuz",
+    ],
+    "Fatma Nur": [
+        "Hatice Yıldız",
+        "Irmak Turhan",
+        "Narin Ece Barut",
+        "Nevin Selin Alpay",
+    ],
+    "Bilgehan": [
+        "Serra Seçkin",
+        "Ebru Alptekin",
+        "Azra Abak",
+        "Kıvanç Çelik",
+    ],
+    "Ali Kemal": [
+        "Hamza Demir",
+        "Nazif Kılıç",
+        "Mustafa Zahid Beşibirlik",
+        "Asım Efe Dağ",
+    ],
 }
 
 HAFTA_SAYISI = 3         # Her modüldeki hafta sayısı
@@ -251,11 +270,13 @@ print(f"✅ {cikti} oluşturuldu ({len(TAKIMLAR)} takım, {sum(map(len, TAKIMLAR
 # =====================================================================
 if KLASORLERI_OLUSTUR:
     for t_no, (mentor, mentiler) in enumerate(TAKIMLAR.items(), start=1):
+        mentor_klasor = mentor.replace(' ', '_')
         for menti in mentiler:
+            menti_klasor = menti.replace(' ', '_')
             for m in (1, 2):
                 for h in range(1, HAFTA_SAYISI + 1):
-                    yol = os.path.join(REPO_DIR, "01_Takimlar", f"Takim_{t_no:02d}_{mentor}",
-                                       menti, f"modul{m}", f"hafta{h}")
+                    yol = os.path.join(REPO_DIR, "01_Takimlar", f"Takim_{t_no:02d}_{mentor_klasor}",
+                                       menti_klasor, f"modul{m}", f"hafta{h}")
                     os.makedirs(yol, exist_ok=True)
                     gk = os.path.join(yol, ".gitkeep")
                     if not os.path.exists(gk):

@@ -1,6 +1,6 @@
 # Alt Mentor El Kitabı
 
-Tebrikler! Geçen dönem gösterdiğin performans sayesinde bu dönem **alt mentor** olarak seçildin. Artık 2-3 kişilik bir takımın lideri olacaksın.
+Tebrikler! Geçen dönem gösterdiğin performans sayesinde bu dönem **alt mentor** olarak seçildin. Artık 4 kişilik bir takımın lideri olacaksın.
 
 > [!NOTE]
 > Bir konuyu gerçekten öğrenmenin en iyi yolu onu başkasına anlatmaktır. Mentilerinin kodunu incelerken geçen dönem öğrendiklerini çok daha derinden kavrayacaksın.
