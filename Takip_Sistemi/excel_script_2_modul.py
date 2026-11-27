@@ -89,11 +89,17 @@ cikti = os.path.join(BASE_DIR, DOSYA_ADI)
 writer = pd.ExcelWriter(cikti, engine="xlsxwriter")
 wb = writer.book
 
-header = wb.add_format({"bold": True, "text_wrap": True, "valign": "vcenter", "align": "center",
+header = wb.add_format({"bold": True, "text_wrap": False, "valign": "vcenter", "align": "center",
                         "bg_color": "#1F4E78", "font_color": "white", "border": 1})
-cell = wb.add_format({"text_wrap": True, "valign": "vcenter", "border": 1})
-center = wb.add_format({"text_wrap": True, "valign": "vcenter", "align": "center", "border": 1})
+cell = wb.add_format({"text_wrap": False, "valign": "vcenter", "border": 1})
+center = wb.add_format({"text_wrap": False, "valign": "vcenter", "align": "center", "border": 1})
+cell_end = wb.add_format({"text_wrap": False, "valign": "vcenter", "border": 1,
+                          "bottom": 2, "bottom_color": "#1F4E78"})
+center_end = wb.add_format({"text_wrap": False, "valign": "vcenter", "align": "center", "border": 1,
+                            "bottom": 2, "bottom_color": "#1F4E78"})
 pct = wb.add_format({"num_format": "0%", "align": "center", "valign": "vcenter", "border": 1})
+pct_end = wb.add_format({"num_format": "0%", "align": "center", "valign": "vcenter", "border": 1,
+                         "bottom": 2, "bottom_color": "#1F4E78"})
 title = wb.add_format({"bold": True, "font_size": 14, "align": "center", "valign": "vcenter",
                        "border": 1, "bg_color": "#DDEBF7"})
 green = wb.add_format({"bg_color": "#C6EFCE", "font_color": "#006100"})
@@ -158,22 +164,39 @@ def gecis_formulu(menti_hucre):
             f'"✅ Var","🔒 Yok")')
 
 
+mentor_bitis_satirlari = set()
+current_row = 0
+for mentor, mentiler in TAKIMLAR.items():
+    current_row += len(mentiler) * HAFTA_SAYISI
+    mentor_bitis_satirlari.add(current_row)
+
 for sayfa, modul2 in (("Modül 1 Takip", False), ("Modül 2 Takip", True)):
-    df = pd.DataFrame(satirlar, columns=kolonlar)
-    df.to_excel(writer, sheet_name=sayfa, index=False)
-    ws = writer.sheets[sayfa]
-    genislikler = [11, 16, 18, 10, 18, 14, 45]
+    ws = wb.add_worksheet(sayfa)
+    ws.set_default_row(22)
+    ws.set_row(0, 26)
+
+    genislikler = [14, 16, 28, 12, 18, 16, 30]
     for i, w in enumerate(genislikler):
-        ws.set_column(i, i, w, cell if i == 6 else center)
+        ws.set_column(i, i, w)
     for c, v in enumerate(kolonlar):
         ws.write(0, c, v, header)
-    son_kolon = 6
 
+    for r, satir in enumerate(satirlar, start=1):
+        is_end = (r in mentor_bitis_satirlari)
+        f_center = center_end if is_end else center
+        f_cell = cell_end if is_end else cell
+        ws.set_row(r, 22)
+        for c, val in enumerate(satir):
+            ws.write(r, c, val, f_cell if c == 6 else f_center)
+
+    son_kolon = 6
     if modul2:
         ws.write(0, 7, "Modül 2 Hakkı", header)
-        ws.set_column(7, 7, 15, center)
+        ws.set_column(7, 7, 16)
         for r in range(1, N + 1):
-            ws.write_formula(r, 7, "=" + gecis_formulu(f"$C{r + 1}"), center)
+            is_end = (r in mentor_bitis_satirlari)
+            f_center = center_end if is_end else center
+            ws.write_formula(r, 7, "=" + gecis_formulu(f"$C{r + 1}"), f_center)
         # Geçiş hakkı olmayan mentilerin satırları gri (ilk eklenen kural öncelikli)
         ws.conditional_format(1, 0, N, 6, {"type": "formula", "criteria": '=$H2="🔒 Yok"', "format": grey})
         renklendir(ws, 1, 7, N, 7, [("✅ Var", green), ("🔒 Yok", grey)])
@@ -192,10 +215,17 @@ for sayfa, modul2 in (("Modül 1 Takip", False), ("Modül 2 Takip", True)):
 #    G M2 Tamamlanan | H M2 Bitirme Projesi | I Genel Durum
 # =====================================================================
 ws = wb.add_worksheet("Menti Özeti")
+ws.set_default_row(22)
+ws.set_row(0, 30)
+ws.set_row(1, 26)
 ws.merge_range(0, 0, 0, 8, "AKDENİZ ÜNİVERSİTESİ - VERİ BİLİMİ MENTORLUK / MENTİ ÖZETİ", title)
-basliklari_yaz(ws, 1, ["Takım", "Alt Mentor", "Menti", f"M1 Tamamlanan (/{HAFTA_SAYISI})", "M1 Mini Proje",
-                       "Modül 2 Hakkı", f"M2 Tamamlanan (/{HAFTA_SAYISI})", "M2 Bitirme Projesi", "Genel Durum"],
-               [11, 16, 18, 16, 14, 15, 16, 18, 18])
+
+basliklar = ["Takım", "Alt Mentor", "Menti", f"M1 Tamamlanan (/{HAFTA_SAYISI})", "M1 Mini Proje",
+             "Modül 2 Hakkı", f"M2 Tamamlanan (/{HAFTA_SAYISI})", "M2 Bitirme Projesi", "Genel Durum"]
+genislikler_ozet = [14, 16, 28, 18, 16, 16, 18, 18, 18]
+for c, (v, w) in enumerate(zip(basliklar, genislikler_ozet)):
+    ws.write(1, c, v, header)
+    ws.set_column(c, c, w)
 
 
 def proje_formulu(m, menti_hucre):
@@ -203,20 +233,30 @@ def proje_formulu(m, menti_hucre):
             f'"Evet","Hayır")')
 
 
+menti_ozet_mentor_bitis = set()
+curr = 1
+for mentor, mentiler in TAKIMLAR.items():
+    curr += len(mentiler)
+    menti_ozet_mentor_bitis.add(curr)
+
 r = 2
 for t_no, (mentor, mentiler) in enumerate(TAKIMLAR.items(), start=1):
     for menti in mentiler:
         x = r + 1
-        ws.write(r, 0, f"Takim_{t_no:02d}", center)
-        ws.write(r, 1, mentor, center)
-        ws.write(r, 2, menti, center)
-        ws.write_formula(r, 3, f'=COUNTIFS({M1["menti"]},C{x},{M1["durum"]},"{TAMAM}")', center)
-        ws.write_formula(r, 4, proje_formulu(M1, f"C{x}"), center)
-        ws.write_formula(r, 5, "=" + gecis_formulu(f"C{x}"), center)
-        ws.write_formula(r, 6, f'=COUNTIFS({M2["menti"]},C{x},{M2["durum"]},"{TAMAM}")', center)
-        ws.write_formula(r, 7, proje_formulu(M2, f"C{x}"), center)
+        is_end = (r in menti_ozet_mentor_bitis)
+        f_c = center_end if is_end else center
+        f_p = pct_end if is_end else pct
+        ws.set_row(r, 22)
+        ws.write(r, 0, f"Takim_{t_no:02d}", f_c)
+        ws.write(r, 1, mentor, f_c)
+        ws.write(r, 2, menti, f_c)
+        ws.write_formula(r, 3, f'=COUNTIFS({M1["menti"]},C{x},{M1["durum"]},"{TAMAM}")', f_c)
+        ws.write_formula(r, 4, proje_formulu(M1, f"C{x}"), f_c)
+        ws.write_formula(r, 5, "=" + gecis_formulu(f"C{x}"), f_c)
+        ws.write_formula(r, 6, f'=COUNTIFS({M2["menti"]},C{x},{M2["durum"]},"{TAMAM}")', f_c)
+        ws.write_formula(r, 7, proje_formulu(M2, f"C{x}"), f_c)
         ws.write_formula(r, 8, f'=IF(F{x}="✅ Var",IF(AND(G{x}>={MEZUNIYET_MIN_HAFTA},H{x}="Evet"),'
-                               f'"🎓 Mezun","📘 Modül 2\'de"),"📗 Modül 1\'de")', center)
+                               f'"🎓 Mezun","📘 Modül 2\'de"),"📗 Modül 1\'de")', f_c)
         r += 1
 son = r - 1
 renklendir(ws, 2, 4, son, 4, [("Evet", green), ("Hayır", red)])
@@ -229,16 +269,25 @@ ws.freeze_panes(2, 3)
 # 7. SAYFA: Takım Özeti (Baş Mentor paneli)
 # =====================================================================
 ws = wb.add_worksheet("Takım Özeti")
+ws.set_default_row(22)
+ws.set_row(0, 30)
+ws.set_row(1, 26)
 ws.merge_range(0, 0, 0, 6, "TAKIM ÖZETİ - BAŞ MENTOR PANELİ", title)
-basliklari_yaz(ws, 1, ["Takım", "Alt Mentor", "Menti Sayısı", "Modül 1 İlerlemesi",
-                       "Modül 2'ye Geçen", "Modül 2 İlerlemesi", "Mezun"],
-               [11, 16, 13, 17, 16, 17, 10])
+
+basliklar_takim = ["Takım", "Alt Mentor", "Menti Sayısı", "Modül 1 İlerlemesi",
+                   "Modül 2'ye Geçen", "Modül 2 İlerlemesi", "Mezun"]
+genislikler_takim = [14, 16, 14, 18, 18, 18, 14]
+for c, (v, w) in enumerate(zip(basliklar_takim, genislikler_takim)):
+    ws.write(1, c, v, header)
+    ws.set_column(c, c, w)
+
 MO = "'Menti Özeti'"
 MO_TAKIM, MO_HAK, MO_DURUM = (f"{MO}!${c}$3:${c}${son + 1}" for c in "AFI")
 
 r = 2
 for t_no, (mentor, mentiler) in enumerate(TAKIMLAR.items(), start=1):
     x = r + 1
+    ws.set_row(r, 22)
     ws.write(r, 0, f"Takim_{t_no:02d}", center)
     ws.write(r, 1, mentor, center)
     ws.write(r, 2, len(mentiler), center)
@@ -249,6 +298,7 @@ for t_no, (mentor, mentiler) in enumerate(TAKIMLAR.items(), start=1):
     r += 1
 
 x = r + 1
+ws.set_row(r, 24)
 pct_toplam = wb.add_format({"num_format": "0%", "bold": True, "align": "center",
                             "bg_color": "#1F4E78", "font_color": "white", "border": 1})
 ws.write(r, 0, "TOPLAM", header)
