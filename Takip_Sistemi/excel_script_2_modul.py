@@ -14,15 +14,9 @@ import pandas as pd
 
 # =====================================================================
 # 1. TAKIM AYARLARI  (Sadece burayı düzenlemen yeterli)
-#    Anahtar: Alt mentorun adı  |  Değer: O mentora atanan mentiler
+#    Anahtar: Mentor adı  |  Değer: O mentora atanan mentiler
 # =====================================================================
 TAKIMLAR = {
-    "Demirhan": [
-        "Batuhan Dursun",
-        "Yiğit Alperen Bekiroğlu",
-        "Recep Pişgin",
-        "Duru Kaygusuz",
-    ],
     "Fatma Nur": [
         "Hatice Yıldız",
         "Irmak Turhan",
@@ -40,6 +34,15 @@ TAKIMLAR = {
         "Nazif Kılıç",
         "Mustafa Zahid Beşibirlik",
         "Asım Efe Dağ",
+    ],
+    "Demirhan": [
+        "Batuhan Dursun",
+        "Yiğit Alperen Bekiroğlu",
+        "Zeynep Ayabaktı",
+    ],
+    "Yasin": [
+        "Recep Pişgin",
+        "Duru Kaygusuz",
     ],
 }
 
@@ -94,12 +97,12 @@ header = wb.add_format({"bold": True, "text_wrap": False, "valign": "vcenter", "
 cell = wb.add_format({"text_wrap": False, "valign": "vcenter", "border": 1})
 center = wb.add_format({"text_wrap": False, "valign": "vcenter", "align": "center", "border": 1})
 cell_end = wb.add_format({"text_wrap": False, "valign": "vcenter", "border": 1,
-                          "bottom": 2, "bottom_color": "#1F4E78"})
+                          "bottom": 5, "bottom_color": "#1F4E78"})
 center_end = wb.add_format({"text_wrap": False, "valign": "vcenter", "align": "center", "border": 1,
-                            "bottom": 2, "bottom_color": "#1F4E78"})
+                            "bottom": 5, "bottom_color": "#1F4E78"})
 pct = wb.add_format({"num_format": "0%", "align": "center", "valign": "vcenter", "border": 1})
 pct_end = wb.add_format({"num_format": "0%", "align": "center", "valign": "vcenter", "border": 1,
-                         "bottom": 2, "bottom_color": "#1F4E78"})
+                         "bottom": 5, "bottom_color": "#1F4E78"})
 title = wb.add_format({"bold": True, "font_size": 14, "align": "center", "valign": "vcenter",
                        "border": 1, "bg_color": "#DDEBF7"})
 green = wb.add_format({"bg_color": "#C6EFCE", "font_color": "#006100"})
