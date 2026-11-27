@@ -17,8 +17,10 @@ git config --global user.email "eposta@ornek.com"
 
 ### 2. Repoyu Fork'lamak ve İndirmek
 
-1. Program reposunun ana sayfasında **"Fork"** butonuna basın.
-2. Kendi kopyanızda yeşil **"Code"** butonundan linki kopyalayın:
+1. Ana repo sayfasına gidin:  
+   👉 `https://github.com/akdenizveribilimi/AU-Veri-Bilimi-Mentorluk-Programi-2.Faz`
+2. Sayfanın sağ üstündeki **"Fork"** butonuna basın.
+3. Kendi kopyanızda yeşil **"Code"** butonundan linki kopyalayın:
 
 ```bash
 git clone https://github.com/kullanici-adiniz/AU-Veri-Bilimi-Mentorluk-Programi-2.Faz.git
@@ -49,14 +51,20 @@ git push origin main
 3. Başlık: `[Takim_XX] M1-Hafta 1 - Ad Soyad` (Modül 2 için `M2-Hafta 1`)
 4. Açıklamaya kısaca ne yaptığınızı ve zorlandığınız yeri yazın.
 
-### 4. Mentorunuz Değişiklik İsterse
+### 4. Gelişiminizi ve Ödev Durumunuzu Takip Edin
+
+Teslim ettiğiniz ödevlerin incelendiğini, onay durumunu (🔴 Başlamadı, 🟡 Devam Ediyor, 🟢 Tamamlandı) ve mentorunuzun geri bildirim notlarını anlık olarak takip tablosundan görebilirsiniz:
+
+👉 **[Canlı Mentorluk Takip Tablosu (Google Sheets)](https://docs.google.com/spreadsheets/d/1F3KPS0Rb9KHA1f6yniS3lq6TCSWQpe-p/edit?usp=sharing&ouid=116002235258411028119&rtpof=true&sd=true)**
+
+### 5. Mentorunuz Değişiklik İsterse
 
 Dosyanızı düzeltip aynı şekilde `add → commit → push` yapın. **Yeni PR açmanıza gerek yok**, mevcut PR otomatik güncellenir.
 
 > [!IMPORTANT]
 > Sadece kendi klasörünüzdeki dosyaları değiştirin. Başka klasörlerdeki dosyalara dokunmayın.
 
-### 5. Fork'unuzu Güncel Tutmak
+### 6. Fork'unuzu Güncel Tutmak
 
 Ana repoda değişiklik olduysa GitHub'daki fork sayfanızda **"Sync fork" → "Update branch"** butonuna basın, sonra:
 
@@ -79,6 +87,6 @@ git pull origin main
    - **Comment:** Sadece yorum
    - **Approve:** Ödev tamam
    - **Request changes:** Düzeltme gerekiyor
-6. Onayladığınız PR'ları takip tablosunda işaretleyin. Birleştirme (merge) işlemini baş mentor yapar.
+6. Onayladığınız PR'ları **[Canlı Mentorluk Takip Tablosu (Google Sheets)](https://docs.google.com/spreadsheets/d/1F3KPS0Rb9KHA1f6yniS3lq6TCSWQpe-p/edit?usp=sharing&ouid=116002235258411028119&rtpof=true&sd=true)** üzerinde güncelleyin (Durum: 🟢 Tamamlandı, PR Onaylandı: Evet). Birleştirme (merge) işlemini baş mentor yapar.
 
 Anlamadığınız bir yer olursa önce takım grubunuza yazın. Başarılar!

@@ -83,6 +83,9 @@ Her PR'da şu 4 soruyu sor:
 
 ## 5. Takip Tablosu Kullanımı
 
+Takip tablosuna online olarak aşağıdaki bağlantıdan erişebilirsiniz:  
+👉 **[Canlı Mentorluk Takip Tablosu (Google Sheets)](https://docs.google.com/spreadsheets/d/1F3KPS0Rb9KHA1f6yniS3lq6TCSWQpe-p/edit?usp=sharing&ouid=116002235258411028119&rtpof=true&sd=true)**
+
 Tabloda iki ayrı takip sayfası var: **Modül 1 Takip** ve **Modül 2 Takip**. Her hafta mentilerin için şu sütunları güncelle:
 
 - **Durum:** 🟢 Tamamlandı / 🟡 Devam Ediyor / 🔴 Başlamadı

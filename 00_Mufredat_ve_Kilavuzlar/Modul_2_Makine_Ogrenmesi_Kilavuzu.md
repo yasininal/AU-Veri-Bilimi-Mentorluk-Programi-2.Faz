@@ -5,6 +5,7 @@ Tebrikler! Modül 1'i tamamlayarak Makine Öğrenmesi modülüne geçmeye hak ka
 - **Kaynak:** BTK Akademi — Kaan Can Yılmaz, *"Makine Öğrenmesi"* (ücretsiz)
 - **Haftalık video yükü:** Yaklaşık 1.5 saat (seçilen kritik videolar)
 - **Teslim:** Her hafta **Pazar 23:59**'a kadar GitHub'a Pull Request (PR)
+- **Canlı İlerleme Takibi:** [Canlı Takip Tablosu (Google Sheets)](https://docs.google.com/spreadsheets/d/1F3KPS0Rb9KHA1f6yniS3lq6TCSWQpe-p/edit?usp=sharing&ouid=116002235258411028119&rtpof=true&sd=true)
 - **Toplantılar:** Modül başında baş mentorla genel açılış toplantısı ve mentorunuzla takım toplantısı (her hafta tekrarlanmaz)
 
 > [!NOTE]
