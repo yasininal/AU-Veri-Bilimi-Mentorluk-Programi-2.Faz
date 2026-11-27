@@ -36,11 +36,11 @@ TAKIMLAR = {
         "Asım Efe Dağ",
     ],
     "Demirhan": [
-        "Batuhan Dursun",
         "Yiğit Alperen Bekiroğlu",
         "Zeynep Ayabaktı",
     ],
     "Yasin": [
+        "Batuhan Dursun",
         "Recep Pişgin",
         "Duru Kaygusuz",
     ],
@@ -96,6 +96,10 @@ header = wb.add_format({"bold": True, "text_wrap": False, "valign": "vcenter", "
                         "bg_color": "#1F4E78", "font_color": "white", "border": 1})
 cell = wb.add_format({"text_wrap": False, "valign": "vcenter", "border": 1})
 center = wb.add_format({"text_wrap": False, "valign": "vcenter", "align": "center", "border": 1})
+cell_menti_end = wb.add_format({"text_wrap": False, "valign": "vcenter", "border": 1,
+                                "bottom": 2, "bottom_color": "#1F4E78"})
+center_menti_end = wb.add_format({"text_wrap": False, "valign": "vcenter", "align": "center", "border": 1,
+                                  "bottom": 2, "bottom_color": "#1F4E78"})
 cell_end = wb.add_format({"text_wrap": False, "valign": "vcenter", "border": 1,
                           "bottom": 5, "bottom_color": "#1F4E78"})
 center_end = wb.add_format({"text_wrap": False, "valign": "vcenter", "align": "center", "border": 1,
@@ -168,9 +172,12 @@ def gecis_formulu(menti_hucre):
 
 
 mentor_bitis_satirlari = set()
+menti_bitis_satirlari = set()
 current_row = 0
 for mentor, mentiler in TAKIMLAR.items():
-    current_row += len(mentiler) * HAFTA_SAYISI
+    for menti in mentiler:
+        current_row += HAFTA_SAYISI
+        menti_bitis_satirlari.add(current_row)
     mentor_bitis_satirlari.add(current_row)
 
 for sayfa, modul2 in (("Modül 1 Takip", False), ("Modül 2 Takip", True)):
@@ -185,9 +192,15 @@ for sayfa, modul2 in (("Modül 1 Takip", False), ("Modül 2 Takip", True)):
         ws.write(0, c, v, header)
 
     for r, satir in enumerate(satirlar, start=1):
-        is_end = (r in mentor_bitis_satirlari)
-        f_center = center_end if is_end else center
-        f_cell = cell_end if is_end else cell
+        if r in mentor_bitis_satirlari:
+            f_center = center_end
+            f_cell = cell_end
+        elif r in menti_bitis_satirlari:
+            f_center = center_menti_end
+            f_cell = cell_menti_end
+        else:
+            f_center = center
+            f_cell = cell
         ws.set_row(r, 22)
         for c, val in enumerate(satir):
             ws.write(r, c, val, f_cell if c == 6 else f_center)
@@ -197,8 +210,12 @@ for sayfa, modul2 in (("Modül 1 Takip", False), ("Modül 2 Takip", True)):
         ws.write(0, 7, "Modül 2 Hakkı", header)
         ws.set_column(7, 7, 16)
         for r in range(1, N + 1):
-            is_end = (r in mentor_bitis_satirlari)
-            f_center = center_end if is_end else center
+            if r in mentor_bitis_satirlari:
+                f_center = center_end
+            elif r in menti_bitis_satirlari:
+                f_center = center_menti_end
+            else:
+                f_center = center
             ws.write_formula(r, 7, "=" + gecis_formulu(f"$C{r + 1}"), f_center)
         # Geçiş hakkı olmayan mentilerin satırları gri (ilk eklenen kural öncelikli)
         ws.conditional_format(1, 0, N, 6, {"type": "formula", "criteria": '=$H2="🔒 Yok"', "format": grey})

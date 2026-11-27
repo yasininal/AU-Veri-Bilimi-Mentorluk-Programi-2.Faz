@@ -31,8 +31,8 @@ Programı tamamlayan mentiler, **bir sonraki dönem alt mentor** olma ve **proje
 | **Takım 1** | Fatma Nur | Hatice Yıldız, Irmak Turhan, Narin Ece Barut, Nevin Selin Alpay |
 | **Takım 2** | Bilgehan | Serra Seçkin, Ebru Alptekin, Azra Abak, Kıvanç Çelik |
 | **Takım 3** | Ali Kemal | Hamza Demir, Nazif Kılıç, Mustafa Zahid Beşibirlik, Asım Efe Dağ |
-| **Takım 4** | Demirhan | Batuhan Dursun, Yiğit Alperen Bekiroğlu, Zeynep Ayabaktı |
-| **Takım 5** | Yasin (Baş Mentor) | Recep Pişgin, Duru Kaygusuz |
+| **Takım 4** | Demirhan | Yiğit Alperen Bekiroğlu, Zeynep Ayabaktı |
+| **Takım 5** | Yasin (Baş Mentor) | Batuhan Dursun, Recep Pişgin, Duru Kaygusuz |
 
 ## Program Akışı
 
