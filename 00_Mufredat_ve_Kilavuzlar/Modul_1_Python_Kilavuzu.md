@@ -14,7 +14,8 @@ Mentorluk programına hoş geldiniz! Bu dönem her biriniz **küçük bir takım
 2. Aşağıda her hafta için listelenen **zorunlu videoları** izleyip kendi bilgisayarınızda (veya Google Colab'da) uygulayın. Opsiyonel/atlanabilecek videoları izlemenize gerek yoktur.
 3. Ödevinizi **Pazar 23:59**'a kadar PR olarak gönderin.
 4. Alt mentorunuz PR'ınızı inceleyip geri bildirim verir.
-5. Takıldığınız yerde **önce mentorunuza** takım grubunuzdan sorun.
+5. Haftalık ödev onayınızı ve gelişiminizi **[Canlı Mentorluk Takip Tablosu (Google Sheets)](https://docs.google.com/spreadsheets/d/1F3KPS0Rb9KHA1f6yniS3lq6TCSWQpe-p/edit?usp=sharing&ouid=116002235258411028119&rtpof=true&sd=true)** üzerinden anlık takip edebilirsiniz.
+6. Takıldığınız yerde **önce mentorunuza** takım grubunuzdan sorun.
 
 ---
 

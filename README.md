@@ -10,6 +10,12 @@ Bu repo, Veri Bilimi topluluğumuzun **iki modüllü** mentorluk programının t
 > **Modül 1'i başarıyla bitiren menti, Modül 2'ye (Makine Öğrenmesi) geçmeye hak kazanır.**
 > Haftalar bilerek hafif tutuldu: haftada yaklaşık **3-5 saat** ayırmak yeterli.
 
+## 📊 Canlı İlerleme ve Takip Tablosu
+
+Mentiler haftalık ödev teslim durumlarını, alt mentor onaylarını ve Modül 2'ye geçiş haklarını; alt mentorlar ise değerlendirme süreçlerini aşağıdaki canlı Google Sheets tablosundan takip edebilir:
+
+👉 **[Canlı Mentorluk Takip Tablosu (Google Sheets)](https://docs.google.com/spreadsheets/d/1F3KPS0Rb9KHA1f6yniS3lq6TCSWQpe-p/edit?usp=sharing&ouid=116002235258411028119&rtpof=true&sd=true)**
+
 ## Sistem Nasıl İşliyor? (Birbirini Besleyen Model)
 
 ```
@@ -77,4 +83,4 @@ Bunların dışında iletişim takım gruplarında (WhatsApp/Discord) ve PR yoru
   - `Alt_Mentor_El_Kitabi.md`: Alt mentorların sorumlulukları, code review rehberi.
   - `Github_Takim_Kullanimi.md`: Fork, PR açma ve PR inceleme adımları.
 - `01_Takimlar/`: Her takımın klasörü. Yapı: `Takim_XX_MentorAdi/MentiAdi/modulX/haftaX/`
-- `Takip_Sistemi/`: Takip Excel'ini üreten script ve Excel dosyası.
+- `Takip_Sistemi/`: Takip Excel'ini üreten script, yerel Excel dosyası ve [Canlı Google Sheets Takip Tablosu](https://docs.google.com/spreadsheets/d/1F3KPS0Rb9KHA1f6yniS3lq6TCSWQpe-p/edit?usp=sharing&ouid=116002235258411028119&rtpof=true&sd=true).
