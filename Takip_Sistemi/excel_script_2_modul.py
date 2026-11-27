@@ -62,13 +62,13 @@ TAMAM = "🟢 Tamamlandı"
 # =====================================================================
 program = pd.DataFrame([
     ["Modül 1", "Hafta 1", "Atıl S.", "Python Temelleri & GitHub",
-     "Kurulum, Jupyter, Veri Tipleri, Listeler, Sözlükler, If, Döngüler, Fonksiyonlar",
+     "3.2, 3.3, 3.6-3.7, 3.9-3.10, 3.12, 3.15-3.17, 3.20, 3.24, 3.27-3.28 (Değişkenler, Listeler, Fonksiyonlar)",
      "Öğrenci listesini filtreleyen fonksiyon + ilk PR"],
     ["Modül 1", "Hafta 2", "Atıl S.", "NumPy & Pandas",
-     "NumPy'a kısa giriş, Series/DataFrame, Filtreleme, Eksik Veriler, GroupBy",
+     "NumPy (5.1-5.3, 5.6, 5.8) + Pandas (6.1, 6.2, 6.4, 6.5, 6.8, 6.9, 6.13: Eksik Veri, GroupBy)",
      "Titanic verisini temizleme + 1 GroupBy analizi"],
     ["Modül 1", "Hafta 3", "Atıl S.", "Görselleştirme & Mini Proje",
-     "Matplotlib: çizgi, bar, scatter, histogram",
+     "Matplotlib (7.1-7.3, 7.5, 7.8: Çizgi, Bar, Scatter, Histogram)",
      "ZORUNLU mini proje: 3 yorumlu grafik + kısa özet"],
     ["—", "Ara Hafta", "—", "Telafi (Opsiyonel)",
      "Modül 1'de eksiği olanlar için telafi haftası",
