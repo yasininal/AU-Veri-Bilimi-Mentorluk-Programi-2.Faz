@@ -5,7 +5,7 @@ Bu repo, Veri Bilimi topluluğumuzun **iki modüllü** mentorluk programının t
 | Modül | Süre | Konu | Kaynak (BTK Akademi) |
 | :--- | :--- | :--- | :--- |
 | **Modül 1** | 3 hafta | Python ve Veri Analizi | Atıl Samancıoğlu — *Veri Bilimi için Python* |
-| **Modül 2** | 3 hafta | Makine Öğrenmesi Temelleri | Şadi Evren Şeker — *Python ile Makine Öğrenmesi* |
+| **Modül 2** | 3 hafta | Makine Öğrenmesi Temelleri | Kaan Can Yılmaz — *Makine Öğrenmesi* |
 
 > **Modül 1'i başarıyla bitiren menti, Modül 2'ye (Makine Öğrenmesi) geçmeye hak kazanır.**
 > Haftalar bilerek hafif tutuldu: haftada yaklaşık **3-5 saat** ayırmak yeterli.
